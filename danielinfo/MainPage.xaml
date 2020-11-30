@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="danielinfo.MainPage">
+
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu" BackgroundColor="LightCyan" Padding="10">
+            <ContentPage.Content>
+                <StackLayout Margin="10" Orientation="Vertical">
+                    <Image x:Name="profileImage"></Image>
+                    <ListView x:Name="AboutList" ItemSelected="aboutList_ItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ImageCell Text="{Binding Text}" Detail="{Binding De}"
+                                       ImageSource="{Binding ImagePath}">
+
+                                </ImageCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    
+    <MasterDetailPage.Detail>
+        <ContentPage Title="Master" Padding="15">
+            <ContentPage.Content>
+                <StackLayout Margin="10">
+                    <Label Text="Master Page Elemendid"></Label>
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+
+
+
+</MasterDetailPage>
